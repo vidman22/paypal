@@ -17,7 +17,7 @@ func (c *Client) CreatePartnerReferral(ctx context.Context, params BusinessEntit
 }
 
 func (c *Client) ShowReferralData(ctx context.Context, partnerReferralID string) (*ShowReferralDataResponse, error) {
-	req, err := c.NewRequest(ctx, "GET", fmt.Sprintf("%s%s", c.APIBase, fmt.Sprintf("/v2/customer/partner-referrals/%s", partnerReferralID)), nil)
+	req, err := c.NewRequest(ctx, "GET", fmt.Sprintf("%s%s", c.APIBase, "/v2/customer/partner-referrals/"+partnerReferralID), nil)
 	response := &ShowReferralDataResponse{}
 	if err != nil {
 		return response, err
