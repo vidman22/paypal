@@ -155,6 +155,493 @@ type (
 	// JSONTime overrides MarshalJson method to format in ISO8601
 	JSONTime time.Time
 
+	ShowReferralDataResponse struct {
+		PartnerReferralId string `json:"partner_referral_id"`
+		SubmitterPayerId  string `json:"submitter_payer_id"`
+		ReferralData      struct {
+			IndividualOwners []struct {
+				Names []struct {
+					Prefix     string `json:"prefix"`
+					GivenName  string `json:"given_name"`
+					Surname    string `json:"surname"`
+					MiddleName string `json:"middle_name"`
+					Suffix     string `json:"suffix"`
+					FullName   string `json:"full_name"`
+					Type       string `json:"type"`
+				} `json:"names"`
+				Citizenship string `json:"citizenship"`
+				Addresses   []struct {
+					AddressLine1 string `json:"address_line_1"`
+					AddressLine2 string `json:"address_line_2"`
+					AdminArea2   string `json:"admin_area_2"`
+					AdminArea1   string `json:"admin_area_1"`
+					PostalCode   string `json:"postal_code"`
+					CountryCode  string `json:"country_code"`
+					Type         string `json:"type"`
+				} `json:"addresses"`
+				Phones []struct {
+					CountryCode     string `json:"country_code"`
+					NationalNumber  string `json:"national_number"`
+					ExtensionNumber string `json:"extension_number"`
+					Type            string `json:"type"`
+				} `json:"phones"`
+				BirthDetails struct {
+					DateOfBirth string `json:"date_of_birth"`
+				} `json:"birth_details"`
+				Type string `json:"type"`
+			} `json:"individual_owners"`
+			BusinessEntity struct {
+				BusinessType struct {
+					Type    string `json:"type"`
+					Subtype string `json:"subtype"`
+				} `json:"business_type"`
+				BusinessIndustry struct {
+					Category    string `json:"category"`
+					MccCode     string `json:"mcc_code"`
+					Subcategory string `json:"subcategory"`
+				} `json:"business_industry"`
+				BusinessIncorporation struct {
+					IncorporationCountryCode string `json:"incorporation_country_code"`
+					IncorporationDate        string `json:"incorporation_date"`
+				} `json:"business_incorporation"`
+				Names []struct {
+					BusinessName string `json:"business_name"`
+					Type         string `json:"type"`
+				} `json:"names"`
+				Emails []struct {
+					Type  string `json:"type"`
+					Email string `json:"email"`
+				} `json:"emails"`
+				Website   string `json:"website"`
+				Addresses []struct {
+					AddressLine1 string `json:"address_line_1"`
+					AddressLine2 string `json:"address_line_2"`
+					AdminArea2   string `json:"admin_area_2"`
+					AdminArea1   string `json:"admin_area_1"`
+					PostalCode   string `json:"postal_code"`
+					CountryCode  string `json:"country_code"`
+					Type         string `json:"type"`
+				} `json:"addresses"`
+				Phones []struct {
+					CountryCode     string `json:"country_code"`
+					NationalNumber  string `json:"national_number"`
+					ExtensionNumber string `json:"extension_number"`
+					Type            string `json:"type"`
+				} `json:"phones"`
+				BeneficialOwners struct {
+					IndividualBeneficialOwners []struct {
+						Names []struct {
+							Prefix     string `json:"prefix"`
+							GivenName  string `json:"given_name"`
+							Surname    string `json:"surname"`
+							MiddleName string `json:"middle_name"`
+							Suffix     string `json:"suffix"`
+							FullName   string `json:"full_name"`
+							Type       string `json:"type"`
+						} `json:"names"`
+						Citizenship string `json:"citizenship"`
+						Addresses   []struct {
+							AddressLine1 string `json:"address_line_1"`
+							AddressLine2 string `json:"address_line_2"`
+							AdminArea2   string `json:"admin_area_2"`
+							AdminArea1   string `json:"admin_area_1"`
+							PostalCode   string `json:"postal_code"`
+							CountryCode  string `json:"country_code"`
+							Type         string `json:"type"`
+						} `json:"addresses"`
+						Phones []struct {
+							CountryCode     string `json:"country_code"`
+							NationalNumber  string `json:"national_number"`
+							ExtensionNumber string `json:"extension_number"`
+							Type            string `json:"type"`
+						} `json:"phones"`
+						BirthDetails struct {
+							DateOfBirth string `json:"date_of_birth"`
+						} `json:"birth_details"`
+						PercentageOfOwnership string `json:"percentage_of_ownership"`
+					} `json:"individual_beneficial_owners"`
+					BusinessBeneficialOwners []struct {
+						BusinessType struct {
+							Type    string `json:"type"`
+							Subtype string `json:"subtype"`
+						} `json:"business_type"`
+						BusinessIndustry struct {
+							Category    string `json:"category"`
+							MccCode     string `json:"mcc_code"`
+							Subcategory string `json:"subcategory"`
+						} `json:"business_industry"`
+						BusinessIncorporation struct {
+							IncorporationCountryCode string `json:"incorporation_country_code"`
+							IncorporationDate        string `json:"incorporation_date"`
+						} `json:"business_incorporation"`
+						Names []struct {
+							BusinessName string `json:"business_name"`
+							Type         string `json:"type"`
+						} `json:"names"`
+						Emails []struct {
+							Type  string `json:"type"`
+							Email string `json:"email"`
+						} `json:"emails"`
+						Website   string `json:"website"`
+						Addresses []struct {
+							AddressLine1 string `json:"address_line_1"`
+							AddressLine2 string `json:"address_line_2"`
+							AdminArea2   string `json:"admin_area_2"`
+							AdminArea1   string `json:"admin_area_1"`
+							PostalCode   string `json:"postal_code"`
+							CountryCode  string `json:"country_code"`
+							Type         string `json:"type"`
+						} `json:"addresses"`
+						Phones []struct {
+							CountryCode     string `json:"country_code"`
+							NationalNumber  string `json:"national_number"`
+							ExtensionNumber string `json:"extension_number"`
+							Type            string `json:"type"`
+						} `json:"phones"`
+						PercentageOfOwnership string `json:"percentage_of_ownership"`
+					} `json:"business_beneficial_owners"`
+				} `json:"beneficial_owners"`
+				OfficeBearers []struct {
+					Names []struct {
+						Prefix     string `json:"prefix"`
+						GivenName  string `json:"given_name"`
+						Surname    string `json:"surname"`
+						MiddleName string `json:"middle_name"`
+						Suffix     string `json:"suffix"`
+						FullName   string `json:"full_name"`
+						Type       string `json:"type"`
+					} `json:"names"`
+					Citizenship string `json:"citizenship"`
+					Addresses   []struct {
+						AddressLine1 string `json:"address_line_1"`
+						AddressLine2 string `json:"address_line_2"`
+						AdminArea2   string `json:"admin_area_2"`
+						AdminArea1   string `json:"admin_area_1"`
+						PostalCode   string `json:"postal_code"`
+						CountryCode  string `json:"country_code"`
+						Type         string `json:"type"`
+					} `json:"addresses"`
+					Phones []struct {
+						CountryCode     string `json:"country_code"`
+						NationalNumber  string `json:"national_number"`
+						ExtensionNumber string `json:"extension_number"`
+						Type            string `json:"type"`
+					} `json:"phones"`
+					BirthDetails struct {
+						DateOfBirth string `json:"date_of_birth"`
+					} `json:"birth_details"`
+					Role string `json:"role"`
+				} `json:"office_bearers"`
+				AnnualSalesVolumeRange struct {
+					MinimumAmount struct {
+						CurrencyCode string `json:"currency_code"`
+						Value        string `json:"value"`
+					} `json:"minimum_amount"`
+					MaximumAmount struct {
+						CurrencyCode string `json:"currency_code"`
+						Value        string `json:"value"`
+					} `json:"maximum_amount"`
+				} `json:"annual_sales_volume_range"`
+				AverageMonthlyVolumeRange struct {
+					MinimumAmount struct {
+						CurrencyCode string `json:"currency_code"`
+						Value        string `json:"value"`
+					} `json:"minimum_amount"`
+					MaximumAmount struct {
+						CurrencyCode string `json:"currency_code"`
+						Value        string `json:"value"`
+					} `json:"maximum_amount"`
+				} `json:"average_monthly_volume_range"`
+				PurposeCode string `json:"purpose_code"`
+			} `json:"business_entity"`
+			Email                 string `json:"email"`
+			PreferredLanguageCode string `json:"preferred_language_code"`
+			TrackingId            string `json:"tracking_id"`
+			PartnerConfigOverride struct {
+				PartnerLogoUrl       string `json:"partner_logo_url"`
+				ReturnUrl            string `json:"return_url"`
+				ReturnUrlDescription string `json:"return_url_description"`
+				ActionRenewalUrl     string `json:"action_renewal_url"`
+				ShowAddCreditCard    bool   `json:"show_add_credit_card"`
+			} `json:"partner_config_override"`
+			Operations []struct {
+				Operation                string `json:"operation"`
+				ApiIntegrationPreference struct {
+					ClassicApiIntegration struct {
+						IntegrationType   string `json:"integration_type"`
+						ThirdPartyDetails struct {
+							Permissions []string `json:"permissions"`
+						} `json:"third_party_details"`
+						FirstPartyDetails string `json:"first_party_details"`
+					} `json:"classic_api_integration"`
+					RestApiIntegration struct {
+						IntegrationMethod string `json:"integration_method"`
+						IntegrationType   string `json:"integration_type"`
+						ThirdPartyDetails struct {
+							Features []string `json:"features"`
+						} `json:"third_party_details"`
+					} `json:"rest_api_integration"`
+				} `json:"api_integration_preference"`
+				BillingAgreement struct {
+					Description                 string `json:"description"`
+					BillingExperiencePreference struct {
+						ExperienceId      string `json:"experience_id"`
+						BillingContextSet bool   `json:"billing_context_set"`
+					} `json:"billing_experience_preference"`
+					MerchantCustomData string `json:"merchant_custom_data"`
+					ApprovalUrl        string `json:"approval_url"`
+					EcToken            string `json:"ec_token"`
+				} `json:"billing_agreement"`
+			} `json:"operations"`
+			Products      []string `json:"products"`
+			LegalConsents []struct {
+				Type    string `json:"type"`
+				Granted bool   `json:"granted"`
+			} `json:"legal_consents"`
+		} `json:"referral_data"`
+		Links []struct {
+			Href   string `json:"href"`
+			Rel    string `json:"rel"`
+			Method string `json:"method"`
+		} `json:"links"`
+	}
+
+	CreatePartnerReferralResponse struct {
+		Links []struct {
+			Href   string `json:"href"`
+			Rel    string `json:"rel"`
+			Method string `json:"method"`
+		} `json:"links"`
+	}
+
+	BusinessEntity struct {
+		IndividualOwners []struct {
+			Names []struct {
+				Prefix     string `json:"prefix"`
+				GivenName  string `json:"given_name"`
+				Surname    string `json:"surname"`
+				MiddleName string `json:"middle_name"`
+				Suffix     string `json:"suffix"`
+				FullName   string `json:"full_name"`
+				Type       string `json:"type"`
+			} `json:"names"`
+			Citizenship string `json:"citizenship"`
+			Addresses   []struct {
+				AddressLine1 string `json:"address_line_1"`
+				AddressLine2 string `json:"address_line_2"`
+				AdminArea2   string `json:"admin_area_2"`
+				AdminArea1   string `json:"admin_area_1"`
+				PostalCode   string `json:"postal_code"`
+				CountryCode  string `json:"country_code"`
+				Type         string `json:"type"`
+			} `json:"addresses"`
+			Phones []struct {
+				CountryCode     string `json:"country_code"`
+				NationalNumber  string `json:"national_number"`
+				ExtensionNumber string `json:"extension_number"`
+				Type            string `json:"type"`
+			} `json:"phones"`
+			BirthDetails struct {
+				DateOfBirth string `json:"date_of_birth"`
+			} `json:"birth_details"`
+			Type string `json:"type"`
+		} `json:"individual_owners"`
+		BusinessEntity struct {
+			BusinessType struct {
+				Type    string `json:"type"`
+				Subtype string `json:"subtype"`
+			} `json:"business_type"`
+			BusinessIndustry struct {
+				Category    string `json:"category"`
+				MccCode     string `json:"mcc_code"`
+				Subcategory string `json:"subcategory"`
+			} `json:"business_industry"`
+			BusinessIncorporation struct {
+				IncorporationCountryCode string `json:"incorporation_country_code"`
+				IncorporationDate        string `json:"incorporation_date"`
+			} `json:"business_incorporation"`
+			Names []struct {
+				BusinessName string `json:"business_name"`
+				Type         string `json:"type"`
+			} `json:"names"`
+			Emails []struct {
+				Type  string `json:"type"`
+				Email string `json:"email"`
+			} `json:"emails"`
+			Website   string `json:"website"`
+			Addresses []struct {
+				AddressLine1 string `json:"address_line_1"`
+				AddressLine2 string `json:"address_line_2"`
+				AdminArea2   string `json:"admin_area_2"`
+				AdminArea1   string `json:"admin_area_1"`
+				PostalCode   string `json:"postal_code"`
+				CountryCode  string `json:"country_code"`
+				Type         string `json:"type"`
+			} `json:"addresses"`
+			Phones []struct {
+				CountryCode     string `json:"country_code"`
+				NationalNumber  string `json:"national_number"`
+				ExtensionNumber string `json:"extension_number"`
+				Type            string `json:"type"`
+			} `json:"phones"`
+			BeneficialOwners struct {
+				IndividualBeneficialOwners []struct {
+					Names []struct {
+						Prefix     string `json:"prefix"`
+						GivenName  string `json:"given_name"`
+						Surname    string `json:"surname"`
+						MiddleName string `json:"middle_name"`
+						Suffix     string `json:"suffix"`
+						FullName   string `json:"full_name"`
+						Type       string `json:"type"`
+					} `json:"names"`
+					Citizenship string `json:"citizenship"`
+					Addresses   []struct {
+						AddressLine1 string `json:"address_line_1"`
+						AddressLine2 string `json:"address_line_2"`
+						AdminArea2   string `json:"admin_area_2"`
+						AdminArea1   string `json:"admin_area_1"`
+						PostalCode   string `json:"postal_code"`
+						CountryCode  string `json:"country_code"`
+						Type         string `json:"type"`
+					} `json:"addresses"`
+					Phones []struct {
+						CountryCode     string `json:"country_code"`
+						NationalNumber  string `json:"national_number"`
+						ExtensionNumber string `json:"extension_number"`
+						Type            string `json:"type"`
+					} `json:"phones"`
+					BirthDetails struct {
+						DateOfBirth string `json:"date_of_birth"`
+					} `json:"birth_details"`
+					PercentageOfOwnership string `json:"percentage_of_ownership"`
+				} `json:"individual_beneficial_owners"`
+				BusinessBeneficialOwners []struct {
+					BusinessType struct {
+						Type    string `json:"type"`
+						Subtype string `json:"subtype"`
+					} `json:"business_type"`
+					BusinessIndustry struct {
+						Category    string `json:"category"`
+						MccCode     string `json:"mcc_code"`
+						Subcategory string `json:"subcategory"`
+					} `json:"business_industry"`
+					BusinessIncorporation struct {
+						IncorporationCountryCode string `json:"incorporation_country_code"`
+						IncorporationDate        string `json:"incorporation_date"`
+					} `json:"business_incorporation"`
+					Names []struct {
+						BusinessName string `json:"business_name"`
+						Type         string `json:"type"`
+					} `json:"names"`
+					Emails []struct {
+						Type  string `json:"type"`
+						Email string `json:"email"`
+					} `json:"emails"`
+					Website   string `json:"website"`
+					Addresses []struct {
+						AddressLine1 string `json:"address_line_1"`
+						AddressLine2 string `json:"address_line_2"`
+						AdminArea2   string `json:"admin_area_2"`
+						AdminArea1   string `json:"admin_area_1"`
+						PostalCode   string `json:"postal_code"`
+						CountryCode  string `json:"country_code"`
+						Type         string `json:"type"`
+					} `json:"addresses"`
+					Phones []struct {
+						CountryCode     string `json:"country_code"`
+						NationalNumber  string `json:"national_number"`
+						ExtensionNumber string `json:"extension_number"`
+						Type            string `json:"type"`
+					} `json:"phones"`
+					PercentageOfOwnership string `json:"percentage_of_ownership"`
+				} `json:"business_beneficial_owners"`
+			} `json:"beneficial_owners"`
+			OfficeBearers []struct {
+				Names []struct {
+					Prefix     string `json:"prefix"`
+					GivenName  string `json:"given_name"`
+					Surname    string `json:"surname"`
+					MiddleName string `json:"middle_name"`
+					Suffix     string `json:"suffix"`
+					FullName   string `json:"full_name"`
+					Type       string `json:"type"`
+				} `json:"names"`
+				Citizenship string `json:"citizenship"`
+				Addresses   []struct {
+					AddressLine1 string `json:"address_line_1"`
+					AddressLine2 string `json:"address_line_2"`
+					AdminArea2   string `json:"admin_area_2"`
+					AdminArea1   string `json:"admin_area_1"`
+					PostalCode   string `json:"postal_code"`
+					CountryCode  string `json:"country_code"`
+					Type         string `json:"type"`
+				} `json:"addresses"`
+				Phones []struct {
+					CountryCode     string `json:"country_code"`
+					NationalNumber  string `json:"national_number"`
+					ExtensionNumber string `json:"extension_number"`
+					Type            string `json:"type"`
+				} `json:"phones"`
+				BirthDetails struct {
+					DateOfBirth string `json:"date_of_birth"`
+				} `json:"birth_details"`
+				Role string `json:"role"`
+			} `json:"office_bearers"`
+			AnnualSalesVolumeRange struct {
+				MinimumAmount struct {
+					CurrencyCode string `json:"currency_code"`
+					Value        string `json:"value"`
+				} `json:"minimum_amount"`
+				MaximumAmount struct {
+					CurrencyCode string `json:"currency_code"`
+					Value        string `json:"value"`
+				} `json:"maximum_amount"`
+			} `json:"annual_sales_volume_range"`
+			AverageMonthlyVolumeRange struct {
+				MinimumAmount struct {
+					CurrencyCode string `json:"currency_code"`
+					Value        string `json:"value"`
+				} `json:"minimum_amount"`
+				MaximumAmount struct {
+					CurrencyCode string `json:"currency_code"`
+					Value        string `json:"value"`
+				} `json:"maximum_amount"`
+			} `json:"average_monthly_volume_range"`
+			PurposeCode string `json:"purpose_code"`
+		} `json:"business_entity"`
+		Email                 string `json:"email"`
+		PreferredLanguageCode string `json:"preferred_language_code"`
+		TrackingId            string `json:"tracking_id"`
+		PartnerConfigOverride struct {
+			PartnerLogoUrl       string `json:"partner_logo_url"`
+			ReturnUrl            string `json:"return_url"`
+			ReturnUrlDescription string `json:"return_url_description"`
+			ActionRenewalUrl     string `json:"action_renewal_url"`
+			ShowAddCreditCard    bool   `json:"show_add_credit_card"`
+		} `json:"partner_config_override"`
+		Operations []struct {
+			Operation string `json:"operation"`
+		} `json:"operations"`
+		FinancialInstruments struct {
+			Banks []struct {
+				NickName      string `json:"nick_name"`
+				AccountNumber string `json:"account_number"`
+				AccountType   string `json:"account_type"`
+				CurrencyCode  string `json:"currency_code"`
+				Identifiers   []struct {
+					Type  string `json:"type"`
+					Value string `json:"value"`
+				} `json:"identifiers"`
+			} `json:"banks"`
+		} `json:"financial_instruments"`
+		LegalConsents []struct {
+			Type    string `json:"type"`
+			Granted bool   `json:"granted"`
+		} `json:"legal_consents"`
+		Products []string `json:"products"`
+	}
+
 	// Address struct
 	Address struct {
 		Line1       string `json:"line1,omitempty"`
